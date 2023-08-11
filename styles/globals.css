@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Avenir LT Pro";
+  font-style: black;
+  font-weight: 750;
+  font-display: swap;
+  src: local("Avenir LT Pro"),
+    url("https://fonts.cdnfonts.com/s/36611/AvenirLTProBlack.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Avenir LT Pro";
+  font-style: medium;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Avenir LT Pro"),
+    url("https://fonts.cdnfonts.com/s/36611/AvenirLTProRoman.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Against";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Against"),
+    url("https://fonts.cdnfonts.com/s/45043/Against.woff") format("woff");
+}
