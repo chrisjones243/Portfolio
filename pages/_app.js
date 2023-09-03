@@ -1,8 +1,13 @@
 // pages/_app.js
-import { ChakraProvider, Flex } from "@chakra-ui/react";
-import { Box } from "@chakra-ui/react";
+import React, { useState } from "react";
 
-import Menu from "../components/Menu";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
+import { ColorModeScript } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/react";
+
+import Menu from "../components/menu";
+import Drawer from "../components/drawer";
 import { theme } from "../styles/theme";
 
 const line = () => {
@@ -18,14 +23,32 @@ const lines = Array(numberOfLines)
   });
 
 function MyApp({ Component, pageProps }) {
+  const { colorMode } = useColorMode(); // Get the current color mode
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  console.log("colorMode", colorMode);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
   return (
     <ChakraProvider theme={theme}>
-      <Box bg={"background.secondary"} minH="100vh" mx={20} position="relative">
+      <Box
+        bg={theme.colors.background[colorMode]} // Update this line        // minH="100vh"
+        // minW={"full"}
+        mx={20}
+        position="relative"
+      >
         <Flex justify={"space-between"} position="absolute" w={"full"}>
           {lines}
         </Flex>
-        <Menu />
+
+        <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+
         <Box pt={"40"} />
+
+        <Menu isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
         <Component {...pageProps} />
       </Box>
     </ChakraProvider>

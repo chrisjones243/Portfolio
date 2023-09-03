@@ -1,18 +1,24 @@
 import { extendTheme, defineStyle, defineStyleConfig } from "@chakra-ui/react";
+
 import "../styles/globals.css";
+
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 
 const colors = {
   font: {
-    primary: "#FFFFFF",
-    secondary: "#000000",
+    dark: "#FFFFFF",
+    light: "#000000",
   },
   brand: {
-    primary: "#FFFFFF",
-    secondary: "#000000",
+    dark: "#FFFFFF",
+    light: "#000000",
   },
   background: {
-    primary: "#000000",
-    secondary: "#FFFFFF",
+    dark: "#000000",
+    light: "#FFFFFF",
   },
   stroke: "#585858",
 };
@@ -71,6 +77,7 @@ const textTheme = defineStyleConfig({
 });
 
 export const theme = extendTheme({
+  config,
   colors,
   fonts,
   fontWeights,
