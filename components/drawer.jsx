@@ -39,11 +39,10 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
   return (
     <Box
       bg={`background.${colorMode}`}
-      minW="100vw"
+      w="full"
       minH="100vh"
-      position={"fixed"}
-      top={0}
-      left={0}
+      // top={0}
+      // left={0}
       display={isDrawerOpen ? "block" : "none"}
     >
       <motion.div
@@ -64,10 +63,10 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about">About Us</Link>
+            <Link href="/about">Contact</Link>
           </li>
           <li>
-            <Link href="/blog/hello-world">Blog Post</Link>
+            <Link href="/casestudies">Case Studies</Link>
           </li>
         </ul>
       </motion.div>

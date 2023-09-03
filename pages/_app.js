@@ -43,10 +43,9 @@ function MyApp({ Component, pageProps }) {
         <Flex justify={"space-between"} position="absolute" w={"full"}>
           {lines}
         </Flex>
+        <Box pt={"40"} />
 
         <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-
-        <Box pt={"40"} />
 
         <Menu isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
         <Component {...pageProps} />
