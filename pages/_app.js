@@ -1,14 +1,15 @@
 // pages/_app.js
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { ColorModeScript } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 
-import Menu from "../components/menu";
-import Drawer from "../components/drawer";
+import NavBar from "../components/navBar";
+import NavPage from "../components/navPage";
 import { theme } from "../styles/theme";
+import { Container } from "postcss";
 
 const line = () => {
   return <Box bg={"stroke"} h="100vh" w="1px" top={0} />;
@@ -26,29 +27,40 @@ function MyApp({ Component, pageProps }) {
   const { colorMode } = useColorMode(); // Get the current color mode
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  console.log("colorMode", colorMode);
-
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
+
+    if (!isDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
   };
 
   return (
     <ChakraProvider theme={theme}>
       <Box
-        bg={theme.colors.background[colorMode]} // Update this line        // minH="100vh"
-        // minW={"full"}
+        bg={theme.colors.background[colorMode]} // Update this line
         mx={20}
-        position="relative"
+        minH={"100vh"}
       >
-        <Flex justify={"space-between"} position="absolute" w={"full"}>
+        <NavBar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+        <Box pt={"40"} />
+        <Component {...pageProps} />
+
+        {isDrawerOpen && <NavPage isDrawerOpen={isDrawerOpen} />}
+
+        <Flex
+          justify="space-between"
+          width="full"
+          position="fixed"
+          left={0}
+          px={20}
+          top={0}
+          pointerEvents={"none"}
+        >
           {lines}
         </Flex>
-        <Box pt={"40"} />
-
-        <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-
-        <Menu isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-        <Component {...pageProps} />
       </Box>
     </ChakraProvider>
   );

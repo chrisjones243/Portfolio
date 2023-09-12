@@ -10,8 +10,9 @@ import {
 import { useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import React from "react";
 
-const Menu = ({ isDrawerOpen, toggleDrawer }) => {
+const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
   const theme = useTheme();
   const { colorMode } = useColorMode(); // Get the current color mode
 
@@ -37,8 +38,12 @@ const Menu = ({ isDrawerOpen, toggleDrawer }) => {
 
   return (
     <Box
-      position="absolute"
+      // position="absolute"
+      position="fixed"
       top="10"
+      left={0}
+      px={20}
+      zIndex={1002}
       width="full"
       id="navbar"
       textAlign={"-moz-right"}
@@ -96,4 +101,4 @@ const Menu = ({ isDrawerOpen, toggleDrawer }) => {
   );
 };
 
-export default Menu;
+export default NavBar;
