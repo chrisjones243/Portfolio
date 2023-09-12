@@ -1,15 +1,17 @@
 // pages/_app.js
 import React, { useState, useMemo } from "react";
 
-import { ChakraProvider, Flex } from "@chakra-ui/react";
-import { ColorModeScript } from "@chakra-ui/react";
-import { Box } from "@chakra-ui/react";
-import { useColorMode } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  useColorMode,
+  Flex,
+  Box,
+  Container,
+} from "@chakra-ui/react";
 
 import NavBar from "../components/navBar";
 import NavPage from "../components/navPage";
 import { theme } from "../styles/theme";
-import { Container } from "postcss";
 
 const line = () => {
   return <Box bg={"stroke"} h="100vh" w="1px" top={0} />;
@@ -46,7 +48,9 @@ function MyApp({ Component, pageProps }) {
       >
         <NavBar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
         <Box pt={"40"} />
-        <Component {...pageProps} />
+        <Box>
+          <Component {...pageProps} />
+        </Box>
 
         {isDrawerOpen && <NavPage isDrawerOpen={isDrawerOpen} />}
 

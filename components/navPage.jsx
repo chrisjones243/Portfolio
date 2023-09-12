@@ -24,10 +24,8 @@ const NavPage = ({ isDrawerOpen }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition="0.3s cubic-bezier(1,.48,1.03,0)"
         style={{
-          transition: "0.3s ease", // Animation timing and easing
-          border: `1px solid ${useTheme().colors.stroke}`, // Use Chakra UI's theme color
           width: "100%",
           height: "100%",
         }}
@@ -41,7 +39,7 @@ const NavPage = ({ isDrawerOpen }) => {
             <Heading>About</Heading>
           </Link>
 
-          <Link href="/casestudies">
+          <Link href="/caseStudies">
             <Heading>Case Studies</Heading>
           </Link>
         </Flex>
