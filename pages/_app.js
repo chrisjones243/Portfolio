@@ -29,13 +29,19 @@ function MyApp({ Component, pageProps }) {
   const { colorMode } = useColorMode(); // Get the current color mode
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
+  const [animationState, setAnimationState] = useState("open");
 
-    if (!isDrawerOpen) {
-      document.body.style.overflow = "hidden";
+  const toggleDrawer = () => {
+    if (isDrawerOpen) {
+      setAnimationState("close");
+      setTimeout(() => {
+        setIsDrawerOpen(!isDrawerOpen);
+        document.body.style.overflow = "unset";
+      }, 600);
     } else {
-      document.body.style.overflow = "unset";
+      setAnimationState("open");
+      setIsDrawerOpen(!isDrawerOpen);
+      document.body.style.overflow = "hidden";
     }
   };
 
@@ -52,7 +58,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Box>
 
-        {isDrawerOpen && <NavPage isDrawerOpen={isDrawerOpen} />}
+        {isDrawerOpen && <NavPage animate={animationState} />}
 
         <Flex
           justify="space-between"

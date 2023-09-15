@@ -7,8 +7,18 @@ import { useTheme } from "@chakra-ui/react";
 
 import Link from "next/link";
 
-const NavPage = ({ isDrawerOpen }) => {
+const NavPage = ({ animate }) => {
   const { colorMode } = useColorMode(); // Get the current color mode
+
+  const openAnimation = {
+    opacity: 1,
+    transition: "0.6s ease-in-out",
+  };
+
+  const closeAnimation = {
+    opacity: 0,
+    transition: "0.6s ease-in-out",
+  };
 
   return (
     <Box
@@ -23,8 +33,7 @@ const NavPage = ({ isDrawerOpen }) => {
     >
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition="0.3s cubic-bezier(1,.48,1.03,0)"
+        animate={animate == "close" ? closeAnimation : openAnimation}
         style={{
           width: "100%",
           height: "100%",
