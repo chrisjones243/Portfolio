@@ -3,6 +3,8 @@ import { useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 
+import BackgroundLines from "./backgroundLines";
+
 import Link from "next/link";
 
 const NavPage = ({ animate }) => {
@@ -46,6 +48,7 @@ const NavPage = ({ animate }) => {
             <Heading>Case Studies</Heading>
           </Link>
         </Flex>
+        <BackgroundLines />
       </Box>
     </motion.div>
   );

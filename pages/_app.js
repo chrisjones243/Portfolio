@@ -5,19 +5,9 @@ import { ChakraProvider, Flex, Box } from "@chakra-ui/react";
 
 import NavBar from "../components/navBar";
 import NavPage from "../components/navPage";
+
+import BackgroundLines from "../components/backgroundLines";
 import { theme } from "../styles/theme";
-
-const line = () => {
-  return <Box bg={"stroke"} h="100vh" w="1px" top={0} />;
-};
-
-const numberOfLines = 5;
-
-const lines = Array(numberOfLines)
-  .fill()
-  .map((_, i) => {
-    return <Box key={i}>{line()}</Box>;
-  });
 
 function MyApp({ Component, pageProps }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -51,17 +41,7 @@ function MyApp({ Component, pageProps }) {
 
         {isDrawerOpen && <NavPage animate={animationState} />}
 
-        <Flex
-          justify="space-between"
-          width="full"
-          left={0}
-          px={20}
-          top={0}
-          zIndex={-1}
-          position="fixed"
-        >
-          {lines}
-        </Flex>
+        <BackgroundLines />
       </Box>
     </ChakraProvider>
   );
