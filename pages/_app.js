@@ -1,13 +1,7 @@
 // pages/_app.js
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-import {
-  ChakraProvider,
-  useColorMode,
-  Flex,
-  Box,
-  Container,
-} from "@chakra-ui/react";
+import { ChakraProvider, Flex, Box } from "@chakra-ui/react";
 
 import NavBar from "../components/navBar";
 import NavPage from "../components/navPage";
@@ -26,7 +20,6 @@ const lines = Array(numberOfLines)
   });
 
 function MyApp({ Component, pageProps }) {
-  const { colorMode } = useColorMode(); // Get the current color mode
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const [animationState, setAnimationState] = useState(true); // true = open, false = closed
@@ -47,11 +40,6 @@ function MyApp({ Component, pageProps }) {
     console.log("animateState:", animationState); // Debugging log
   };
 
-  useEffect(() => {
-    console.log("colorMode:", colorMode); // Debugging log
-    console.log("theme:", theme.colors.background[colorMode]); // Debugging log
-  }, [colorMode]);
-
   return (
     <ChakraProvider theme={theme}>
       <Box mx={20} minH={"100vh"}>
@@ -66,11 +54,11 @@ function MyApp({ Component, pageProps }) {
         <Flex
           justify="space-between"
           width="full"
-          position="fixed"
           left={0}
           px={20}
           top={0}
-          pointerEvents={"none"}
+          zIndex={-1}
+          position="fixed"
         >
           {lines}
         </Flex>

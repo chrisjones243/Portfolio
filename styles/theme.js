@@ -1,9 +1,4 @@
-import {
-  extendTheme,
-  defineStyle,
-  defineStyleConfig,
-  useColorMode,
-} from "@chakra-ui/react";
+import { extendTheme, defineStyleConfig } from "@chakra-ui/react";
 
 import { mode } from "@chakra-ui/theme-tools";
 
