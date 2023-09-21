@@ -1,4 +1,11 @@
-import { extendTheme, defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import {
+  extendTheme,
+  defineStyle,
+  defineStyleConfig,
+  useColorMode,
+} from "@chakra-ui/react";
+
+import { mode } from "@chakra-ui/theme-tools";
 
 import "../styles/globals.css";
 
@@ -76,7 +83,16 @@ const textTheme = defineStyleConfig({
   },
 });
 
+const styles = {
+  global: (props) => ({
+    body: {
+      bg: mode("background.light", "background.dark")(props),
+    },
+  }),
+};
+
 export const theme = extendTheme({
+  styles,
   config,
   colors,
   fonts,

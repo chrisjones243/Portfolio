@@ -3,8 +3,6 @@ import { useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 
-import { useTheme } from "@chakra-ui/react";
-
 import Link from "next/link";
 
 const NavPage = ({ animate }) => {
@@ -21,23 +19,19 @@ const NavPage = ({ animate }) => {
   };
 
   return (
-    <Box
-      bg={`background.${colorMode}`}
-      w="full"
-      h="full"
-      top={0}
-      left={0}
-      px={20}
-      pt={40}
-      position="fixed"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={animate ? openAnimation : closeAnimation}
     >
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={animate == "close" ? closeAnimation : openAnimation}
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
+      <Box
+        bg={`background.${colorMode}`}
+        w="full"
+        h="full"
+        top={0}
+        left={0}
+        px={20}
+        pt={40}
+        position="fixed"
       >
         <Flex flexDirection="column" justify={"space-between"} h="full" py={20}>
           <Link href="/">
@@ -52,8 +46,8 @@ const NavPage = ({ animate }) => {
             <Heading>Case Studies</Heading>
           </Link>
         </Flex>
-      </motion.div>
-    </Box>
+      </Box>
+    </motion.div>
   );
 };
 export default NavPage;
