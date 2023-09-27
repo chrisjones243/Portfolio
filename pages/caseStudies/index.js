@@ -1,7 +1,7 @@
 import { Container, Heading, Text, Box, Button } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 
-function Casestudies() {
+function Casetudies() {
   return (
     <Box>
       <Heading>Case Studies </Heading>
@@ -9,4 +9,4 @@ function Casestudies() {
   );
 }
 
-export default Casestudies;
+export default Casetudies;

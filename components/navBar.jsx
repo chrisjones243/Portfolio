@@ -4,7 +4,6 @@ import {
   Image,
   AspectRatio,
   Box,
-  Container,
   useTheme,
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
@@ -13,7 +12,6 @@ import Link from "next/link";
 import React from "react";
 
 const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
-  const theme = useTheme();
   const { colorMode } = useColorMode(); // Get the current color mode
 
   const logo = colorMode === "light" ? "logo-dark.svg" : "logo-light.svg";
