@@ -40,12 +40,12 @@ const NavPage = ({ animate }) => {
             <Heading>Home</Heading>
           </Link>
 
-          <Link href="/about">
-            <Heading>About</Heading>
-          </Link>
-
           <Link href="/caseStudies">
             <Heading>Case Studies</Heading>
+          </Link>
+
+          <Link href="/contact">
+            <Heading>Contact</Heading>
           </Link>
         </Flex>
         <BackgroundLines />
