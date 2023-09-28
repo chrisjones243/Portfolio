@@ -14,7 +14,7 @@ import React from "react";
 const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
   const { colorMode } = useColorMode(); // Get the current color mode
 
-  const logo = colorMode === "light" ? "logo-dark.svg" : "logo-light.svg";
+  const logo = colorMode === "light" ? "/logo-dark.svg" : "/logo-light.svg";
 
   const variants = {
     open: {
