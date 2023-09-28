@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import React from "react";
 
 const NavBar = ({ isDrawerOpen, toggleDrawer }) => {

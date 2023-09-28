@@ -37,8 +37,8 @@ const fontWeights = {
 
 const fontSizes = {
   heading: "7rem",
-  subheading: "1.5rem",
-  body: "1rem",
+  subheading: "2.5rem",
+  body: "1.2rem",
 };
 
 const headingTheme = defineStyleConfig({

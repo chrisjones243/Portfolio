@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <Box mx={20} minH={"100vh"}>
         <NavBar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-        <Box pt={"40"} />
+        <Box pt={"60"} />
         <Box>
           <Component {...pageProps} />
         </Box>

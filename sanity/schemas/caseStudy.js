@@ -21,6 +21,7 @@ const caseStudy = {
       name: "image",
       title: "Image",
       type: "image",
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -35,8 +36,9 @@ const caseStudy = {
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "array",
       validation: (Rule) => Rule.required(),
+      of: [{ type: "string" }],
     },
     {
       name: "link",

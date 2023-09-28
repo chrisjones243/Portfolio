@@ -20,7 +20,7 @@ const BackgroundLines = () => {
       left={0}
       px={20}
       top={0}
-      zIndex={-1}
+      zIndex={-20}
       position="fixed"
     >
       {lines}
