@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import { ChakraProvider, Flex, Box } from "@chakra-ui/react";
 
-import NavBar from "../components/navBar";
+import NavBar from "../components/navbar";
 import NavPage from "../components/navPage";
 
 import BackgroundLines from "../components/backgroundLines";
@@ -39,7 +39,9 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Box>
 
-        {isDrawerOpen && <NavPage animate={animationState} />}
+        {isDrawerOpen && (
+          <NavPage animate={animationState} toggleDrawer={toggleDrawer} />
+        )}
 
         <BackgroundLines />
       </Box>

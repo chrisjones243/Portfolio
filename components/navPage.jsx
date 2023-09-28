@@ -7,7 +7,7 @@ import BackgroundLines from "./backgroundLines";
 
 import Link from "next/link";
 
-const NavPage = ({ animate }) => {
+const NavPage = ({ animate, toggleDrawer }) => {
   const { colorMode } = useColorMode(); // Get the current color mode
 
   const openAnimation = {
@@ -36,15 +36,15 @@ const NavPage = ({ animate }) => {
         position="fixed"
       >
         <Flex flexDirection="column" justify={"space-between"} h="full" py={20}>
-          <Link href="/">
+          <Link href="/" onClick={toggleDrawer}>
             <Heading>Home</Heading>
           </Link>
 
-          <Link href="/caseStudies">
+          <Link href="/caseStudies" onClick={toggleDrawer}>
             <Heading>Case Studies</Heading>
           </Link>
 
-          <Link href="/contact">
+          <Link href="/contact" onClick={toggleDrawer}>
             <Heading>Contact</Heading>
           </Link>
         </Flex>
