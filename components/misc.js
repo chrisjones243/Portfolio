@@ -19,6 +19,16 @@ export const DescriptionText = ({ description }) => {
   });
 };
 
+export const BasedAtText = ({ basedAt }) => {
+  return basedAt.map((text, i) => {
+    return (
+      <Text key={i} variant={"body"}>
+        {text}
+      </Text>
+    );
+  });
+};
+
 export const imageObjToUrl = (image) => {
   const builder = ImageUrlBuilder(client);
   const urlFor = (source) => builder.image(source);

@@ -1,6 +1,7 @@
 import { client } from "../../sanity/lib/client";
 import groq from "groq";
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import Link from "next/link";
 
 import { DescriptionText, imageObjToUrl } from "../../components/misc";
 
