@@ -70,6 +70,7 @@ const textTheme = defineStyleConfig({
     subheading: {
       fontSize: "subheading",
       fontWeight: "subheading",
+      letterSpacing: "0.25rem",
     },
     body: {
       fontSize: "body",

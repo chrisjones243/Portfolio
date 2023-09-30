@@ -1,7 +1,7 @@
 // pages/_app.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { ChakraProvider, Flex, Box } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
 
 import NavBar from "../components/navbar";
 import NavPage from "../components/navPage";
