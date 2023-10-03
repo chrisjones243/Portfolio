@@ -30,8 +30,13 @@ export const BasedAtText = ({ basedAt }) => {
 };
 
 export const imageObjToUrl = (image) => {
-  const builder = ImageUrlBuilder(client);
-  const urlFor = (source) => builder.image(source);
-  const imageUrl = urlFor(image).toString();
-  return imageUrl;
+  try {
+    const builder = ImageUrlBuilder(client);
+    const urlFor = (source) => builder.image(source);
+    const imageUrl = urlFor(image).toString();
+    return imageUrl;
+  } catch (error) {
+    console.log("object", image);
+    console.log(error);
+  }
 };
