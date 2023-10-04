@@ -1,5 +1,5 @@
 import { Flex, Heading, Text, Box, Button } from "@chakra-ui/react";
-import { client } from "../../sanity/lib/client";
+import client from "../../sanity/lib/client";
 import groq from "groq";
 import { useState, useEffect } from "react";
 import CaseStudiesList from "../../components/caseStudiesList";

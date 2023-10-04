@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { ChakraProvider, Box } from "@chakra-ui/react";
 
-import NavBar from "../components/navbar";
+import NavBar from "../components/navBar";
 import NavPage from "../components/navPage";
 
 import BackgroundLines from "../components/backgroundLines";

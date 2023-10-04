@@ -1,4 +1,4 @@
-import { client } from "../../sanity/lib/client";
+import client from "../../sanity/lib/client";
 import groq from "groq";
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import Link from "next/link";
@@ -15,7 +15,13 @@ const CaseStudy = ({ study }) => {
     <Box>
       <Heading>{title}</Heading>
       <Box pt={"20"} />
-      <Image src={imageUrl} alt={alt} h={"40vw"} w={"full"} />
+      <Image
+        src={imageUrl}
+        alt={alt}
+        h={"40vw"}
+        w={"full"}
+        objectFit={"cover"}
+      />
       <Box pt={"20"} />
       <DescriptionText description={description} />
     </Box>

@@ -1,6 +1,6 @@
 import { Text, Box, useTheme, Flex, useColorMode } from "@chakra-ui/react";
 import ImageUrlBuilder from "@sanity/image-url";
-import { client } from "../sanity/lib/client";
+import client from "../sanity/lib/client";
 
 import Link from "next/link";
 

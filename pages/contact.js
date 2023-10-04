@@ -1,4 +1,4 @@
-import { client } from "../sanity/lib/client";
+import client from "../sanity/lib/client";
 import groq from "groq";
 import { Flex, Heading, Text, Box, Grid, GridItem } from "@chakra-ui/react";
 import { Avatar } from "@readyplayerme/visage";

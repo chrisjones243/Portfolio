@@ -72,10 +72,9 @@ const NavPage = ({ animate, toggleDrawer }) => {
               display={"flex"}
             >
               <Image
-                src={
-                  "https://cdn2.iconfinder.com/data/icons/css-vol-1/24/dark-mode-1024.png"
-                }
-                alt="Dark Mode"
+                // https://www.iconfinder.com/icons/9056971/dark_mode_icon
+                src={"theme-icon.svg"}
+                alt="Mode"
                 height={30}
                 filter={`invert(${iconColor})`}
               />

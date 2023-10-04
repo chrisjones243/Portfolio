@@ -44,7 +44,7 @@ function HomePage() {
         </GridItem>
       </Grid>
 
-      <Grid templateColumns="repeat(4, 1fr)" gap={0} h="full" py={20} pt={40}>
+      <Grid templateColumns="repeat(4, 1fr)" gap={0} h="full" py={2} pt={40}>
         <GridItem colSpan={2}>
           <AspectRatio ratio={1}>
             <Image
@@ -57,12 +57,11 @@ function HomePage() {
           <Heading>WHO?</Heading>
           <Text variant={"body"} pt={5}>
             {" "}
-            Officia reprehenderit dolor excepteur magna velit pariatur ea veniam
-            cupidatat id ex aute consectetur esse. Ullamco laborum amet eu
-            minim. Nostrud quis est commodo ut pariatur. Magna elit et aliquip
-            minim proident nostrud veniam ullamco enim incididunt pariatur.
-            Cillum eu pariatur culpa exercitation magna adipisicing est proident
-            in ut.{" "}
+            I’m Chris Jones. A 19-year-old Computer Science student with a
+            passion for <s>money</s> coding and exploring tech's uncharted
+            territories. Welcome to my corner of the web. Dive into my projects,
+            interests, and thoughts below. Feel like saying hi? Drop me an
+            email. Let's conquer this world together!{" "}
           </Text>
 
           <ButtonMap data={buttons} />

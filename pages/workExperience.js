@@ -1,5 +1,5 @@
 import { Heading, Box } from "@chakra-ui/react";
-import { client } from "../sanity/lib/client";
+import client from "../sanity/lib/client";
 import { useState, useEffect } from "react";
 
 import WorkExpList from "../components/workExpList";
