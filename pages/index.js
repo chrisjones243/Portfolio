@@ -1,5 +1,4 @@
 import {
-  Container,
   Heading,
   Text,
   Box,
@@ -13,8 +12,6 @@ import { useColorMode } from "@chakra-ui/react";
 import { ButtonMap } from "../components/misc";
 
 function HomePage() {
-  const { colorMode, toggleColorMode } = useColorMode(); // Get the current color mode
-
   const buttons = [
     { text: "Case Studies", link: "/caseStudies" },
     { text: "Work Experience", link: "/workExperience" },

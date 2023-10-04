@@ -1,34 +1,15 @@
 import { client } from "../sanity/lib/client";
 import groq from "groq";
-import {
-  Flex,
-  Heading,
-  Text,
-  Box,
-  Image,
-  Grid,
-  GridItem,
-} from "@chakra-ui/react";
-import { useColorMode } from "@chakra-ui/react";
+import { Flex, Heading, Text, Box, Grid, GridItem } from "@chakra-ui/react";
 import { Avatar } from "@readyplayerme/visage";
 
 import { BasedAtText } from "../components/misc";
 import SocialMediaMap from "../components/socialMediaMap";
 
 function Contact({ details }) {
-  const { colorMode, toggleColorMode } = useColorMode(); // Get the current color mode
-
   const { email, basedAt, socialMedia } = details;
 
   console.log(details);
-
-  // const config = {
-  //   clearCache: true,
-  //   bodyType: "fullbody",
-  //   quickStart: false,
-  //   language: "en",
-  //   scale: 0.1,
-  // };
 
   return (
     <Box>
@@ -49,6 +30,7 @@ function Contact({ details }) {
           <Box pt={"20"} />
           <Text variant={"subheading"}>Social Media</Text>
           <Flex flexDirection={"row"} gap={"2"}>
+            {/* https://www.iconfinder.com/collections/collection/1672007 */}
             <SocialMediaMap array={socialMedia} />
           </Flex>
         </GridItem>

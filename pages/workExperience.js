@@ -1,6 +1,5 @@
-import { Flex, Heading, Text, Box, Button } from "@chakra-ui/react";
+import { Heading, Box } from "@chakra-ui/react";
 import { client } from "../sanity/lib/client";
-import groq from "groq";
 import { useState, useEffect } from "react";
 
 import WorkExpList from "../components/workExpList";
@@ -12,9 +11,7 @@ function WorkExperience() {
     const fetchStudies = async () => {
       return await client.fetch(`*[_type == "workExperience"]`);
     };
-    fetchStudies()
-      .then((data) => setExp(data))
-      .then(() => console.log(exp));
+    fetchStudies().then((data) => setExp(data));
   }, []);
 
   return (

@@ -4,7 +4,6 @@ import {
   Flex,
   Grid,
   GridItem,
-  Text,
   useTheme,
   Image,
 } from "@chakra-ui/react";
