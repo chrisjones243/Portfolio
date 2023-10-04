@@ -9,6 +9,7 @@ import {
 import { useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import Link from "next/link";
 
 const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
   const { colorMode } = useColorMode(); // Get the current color mode
@@ -35,7 +36,6 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
 
   return (
     <Box
-      // position="absolute"
       position="fixed"
       top="10"
       left={0}
@@ -51,11 +51,11 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
         animate={isDrawerOpen ? "open" : "closed"}
         style={{
           display: "flex",
-          flexDirection: "column", // Ensures width change affects only the width
-          width: "100%", // Initial width
-          overflow: "hidden", // Hide overflowing content during animation
-          transition: "0.3s ease", // Animation timing and easing
-          border: `1px solid ${useTheme().colors.stroke}`, // Use Chakra UI's theme color
+          flexDirection: "column",
+          width: "100%",
+          overflow: "hidden",
+          transition: "0.3s ease",
+          border: `1px solid ${useTheme().colors.stroke}`,
         }}
       >
         <Flex
@@ -64,22 +64,28 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
           p="5"
           bg={`background.${colorMode}`}
         >
-          <AspectRatio ratio={422.28 / 435.38} maxW="40px" w="full">
-            <motion.div
-              variants={logoVariants}
-              initial={isDrawerOpen ? "open" : "closed"}
-              animate={isDrawerOpen ? "open" : "closed"}
-              transition="0.3s cubic-bezier(0,1.03,.48,1)"
-            >
-              <Image
-                src={logo}
-                alt="Logo"
-                w="100%"
-                h="100%"
-                objectFit="contain"
-              />
-            </motion.div>
-          </AspectRatio>
+          <Link
+            href="/"
+            style={{ cursor: "pointer", width: "40px", height: "100%" }}
+          >
+            <AspectRatio ratio={422.28 / 435.38} maxW="40px" w="full">
+              <motion.div
+                variants={logoVariants}
+                initial={isDrawerOpen ? "open" : "closed"}
+                animate={isDrawerOpen ? "open" : "closed"}
+                transition="0.3s cubic-bezier(0,1.03,.48,1)"
+              >
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  w="100%"
+                  h="100%"
+                  objectFit="contain"
+                />
+              </motion.div>
+            </AspectRatio>
+          </Link>
+
           <Text
             onClick={toggleDrawer}
             variant="subheading"

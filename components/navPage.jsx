@@ -1,4 +1,13 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Flex,
+  Grid,
+  GridItem,
+  Text,
+  useTheme,
+  Image,
+} from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
@@ -8,7 +17,9 @@ import BackgroundLines from "./backgroundLines";
 import Link from "next/link";
 
 const NavPage = ({ animate, toggleDrawer }) => {
-  const { colorMode } = useColorMode(); // Get the current color mode
+  const { colorMode, toggleColorMode } = useColorMode(); // Get the current color mode
+
+  const iconColor = colorMode === "light" ? 0 : 1;
 
   const openAnimation = {
     opacity: 1,
@@ -35,19 +46,43 @@ const NavPage = ({ animate, toggleDrawer }) => {
         pt={40}
         position="fixed"
       >
-        <Flex flexDirection="column" justify={"space-between"} h="full" py={20}>
-          <Link href="/" onClick={toggleDrawer}>
-            <Heading>Home</Heading>
-          </Link>
+        <Grid templateColumns="repeat(4, 1fr)" gap={0} h="full" py={20}>
+          <GridItem colSpan={3}>
+            <Flex flexDirection="column" justify={"space-between"} h="full">
+              <Link href="/" onClick={toggleDrawer}>
+                <Heading>Home</Heading>
+              </Link>
 
-          <Link href="/caseStudies" onClick={toggleDrawer}>
-            <Heading>Case Studies</Heading>
-          </Link>
+              <Link href="/caseStudies" onClick={toggleDrawer}>
+                <Heading>Case Studies</Heading>
+              </Link>
 
-          <Link href="/contact" onClick={toggleDrawer}>
-            <Heading>Contact</Heading>
-          </Link>
-        </Flex>
+              <Link href="/contact" onClick={toggleDrawer}>
+                <Heading>Contact</Heading>
+              </Link>
+            </Flex>
+          </GridItem>
+          <GridItem colSpan={1} h="full" textAlign="right" display={"flex"}>
+            <Box
+              alignSelf={"flex-end"}
+              w={"full"}
+              onClick={toggleColorMode}
+              border={`1px solid ${useTheme().colors.stroke}`}
+              p={5}
+              justifyContent={"flex-end"}
+              display={"flex"}
+            >
+              <Image
+                src={
+                  "https://cdn2.iconfinder.com/data/icons/css-vol-1/24/dark-mode-1024.png"
+                }
+                alt="Dark Mode"
+                height={30}
+                filter={`invert(${iconColor})`}
+              />
+            </Box>
+          </GridItem>
+        </Grid>
         <BackgroundLines />
       </Box>
     </motion.div>
