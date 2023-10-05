@@ -63,7 +63,6 @@ const headingTheme = defineStyleConfig({
 const textTheme = defineStyleConfig({
   baseStyle: {
     fontFamily: "body",
-    fontWeight: "normal",
     color: "font.secondary",
     _dark: { color: "font.primary" },
   },

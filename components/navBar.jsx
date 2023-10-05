@@ -43,7 +43,8 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
       zIndex={1002}
       width="full"
       id="navbar"
-      textAlign={"-moz-right"}
+      display="flex"
+      justifyContent="flex-end"
     >
       <motion.div
         variants={variants}
@@ -68,7 +69,12 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
             href="/"
             style={{ cursor: "pointer", width: "40px", height: "100%" }}
           >
-            <AspectRatio ratio={422.28 / 435.38} maxW={"40px"} w="full">
+            <AspectRatio
+              ratio={422.28 / 435.38}
+              maxW={"40px"}
+              w="full"
+              h="full"
+            >
               <motion.div
                 variants={logoVariants}
                 initial={isDrawerOpen ? "open" : "closed"}
@@ -78,8 +84,8 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
                 <Image
                   src={logo}
                   alt="Logo"
-                  w={["70%", "90%", "100%"]}
-                  h={["70%", "90%", "100%"]}
+                  w="100%"
+                  h="100%"
                   objectFit="contain"
                 />
               </motion.div>
