@@ -44,10 +44,7 @@ function HomePage() {
         >
           <Box pt={[20, 50, 107]} />
           <AspectRatio ratio={1} w={"full"}>
-            <Image
-              src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60"
-              alt="me"
-            />
+            <Image src="/images/me.png" alt="me" />
           </AspectRatio>
         </GridItem>
       </Grid>
