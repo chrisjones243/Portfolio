@@ -32,9 +32,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box mx={20} minH={"100vh"}>
+      <Box mx={[5, 10, 20]} minH={"100vh"}>
         <NavBar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-        <Box pt={"60"} />
+        <Box pt={[20, 40, 60]} />
         <Box>
           <Component {...pageProps} />
         </Box>

@@ -1,6 +1,14 @@
 import client from "../sanity/lib/client";
 import groq from "groq";
-import { Flex, Heading, Text, Box, Grid, GridItem } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Text,
+  Box,
+  Grid,
+  GridItem,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import { Avatar } from "@readyplayerme/visage";
 
 import { BasedAtText } from "../components/misc";
@@ -9,40 +17,69 @@ import SocialMediaMap from "../components/socialMediaMap";
 function Contact({ details }) {
   const { email, basedAt, socialMedia } = details;
 
-  console.log(details);
+  const [isSmallScreen] = useMediaQuery("(max-width: 1070px)");
 
   return (
     <Box>
-      <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+      <Grid
+        templateColumns={[
+          "1fr",
+          "1fr",
+          "1fr",
+          "1fr 1fr 1fr",
+          "1fr 1fr 1fr 1fr",
+        ]}
+        gap={6}
+      >
         <GridItem colSpan={2}>
-          <Heading>Contact</Heading>
+          <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>Contact</Heading>
 
-          <Box pt={"20"} />
-          <Text variant={"subheading"}>Email me</Text>
-          <Text variant={"body"}>
+          <Box pt={[10, 20, 20]} />
+          <Text
+            variant={"subheading"}
+            fontSize={["1.5rem", "1.8rem", "2rem", "2.5rem"]}
+          >
+            Email me
+          </Text>
+          <Text
+            variant={"body"}
+            fontSize={["1rem", "1.1rem", "1.2rem", "1.2rem"]}
+          >
             <a href={`mailto:${email}`}>{email}</a>
           </Text>
 
           <Box pt={"20"} />
-          <Text variant={"subheading"}>Based At</Text>
+          <Text
+            variant={"subheading"}
+            fontSize={["1.5rem", "1.8rem", "2rem", "2.5rem"]}
+          >
+            Based At
+          </Text>
           <BasedAtText basedAt={basedAt} />
 
           <Box pt={"20"} />
-          <Text variant={"subheading"}>Social Media</Text>
+          <Text
+            variant={"subheading"}
+            fontSize={["1.5rem", "1.8rem", "2rem", "2.5rem"]}
+          >
+            Social Media
+          </Text>
           <Flex flexDirection={"row"} gap={"2"}>
             {/* https://www.iconfinder.com/collections/collection/1672007 */}
             <SocialMediaMap array={socialMedia} />
           </Flex>
         </GridItem>
         <GridItem colSpan={1}>
-          <Avatar
-            modelSrc={
-              "https://models.readyplayer.me/64d014f6a959c17297c67ac0.glb"
-            }
-            cameraInitialDistance={2.6}
-            animationSrc="animations/gangnam_style.fbx"
-            animationClip="gangnam_style_animation"
-          />
+          {!isSmallScreen && (
+            <Avatar
+              modelSrc={
+                "https://models.readyplayer.me/64d014f6a959c17297c67ac0.glb"
+              }
+              cameraInitialDistance={2.6}
+              animationSrc="animations/gangnam_style.fbx"
+              animationClip="gangnam_style_animation"
+            />
+          )}
         </GridItem>
         <GridItem colSpan={1} />
       </Grid>

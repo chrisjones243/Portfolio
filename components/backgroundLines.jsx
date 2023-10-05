@@ -18,7 +18,7 @@ const BackgroundLines = () => {
       justify="space-between"
       width="full"
       left={0}
-      px={20}
+      px={[5, 10, 20]}
       top={0}
       zIndex={-20}
       position="fixed"

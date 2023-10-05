@@ -14,7 +14,7 @@ const SocialMediaMap = ({ array }) => {
         alt={item.name}
         h={"40px"}
         w={"40px"}
-        mr={"10px"}
+        mr={["5px", "7px", "10px", "10px"]}
         onClick={() => window.open(item.url, "_blank")}
         filter={`invert(${iconColor})`}
       />

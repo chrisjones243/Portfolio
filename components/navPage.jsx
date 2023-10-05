@@ -41,23 +41,29 @@ const NavPage = ({ animate, toggleDrawer }) => {
         h="full"
         top={0}
         left={0}
-        px={20}
-        pt={40}
+        px={[5, 10, 20]}
+        pt={[10, 20, 40]}
         position="fixed"
       >
         <Grid templateColumns="repeat(4, 1fr)" gap={0} h="full" py={20}>
           <GridItem colSpan={3}>
             <Flex flexDirection="column" justify={"space-between"} h="full">
               <Link href="/" onClick={toggleDrawer}>
-                <Heading>Home</Heading>
+                <Heading fontSize={["3rem", "4rem", "5rem", "7rem"]}>
+                  Home
+                </Heading>
               </Link>
 
               <Link href="/caseStudies" onClick={toggleDrawer}>
-                <Heading>Case Studies</Heading>
+                <Heading fontSize={["3rem", "4rem", "5rem", "7rem"]}>
+                  Case Studies
+                </Heading>
               </Link>
 
               <Link href="/contact" onClick={toggleDrawer}>
-                <Heading>Contact</Heading>
+                <Heading fontSize={["3rem", "4rem", "5rem", "7rem"]}>
+                  Contact
+                </Heading>
               </Link>
             </Flex>
           </GridItem>
@@ -73,7 +79,7 @@ const NavPage = ({ animate, toggleDrawer }) => {
             >
               <Image
                 // https://www.iconfinder.com/icons/9056971/dark_mode_icon
-                src={"theme-icon.svg"}
+                src={"/theme-icon.svg"}
                 alt="Mode"
                 height={30}
                 filter={`invert(${iconColor})`}

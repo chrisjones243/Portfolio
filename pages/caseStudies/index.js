@@ -17,8 +17,10 @@ function Casetudies() {
 
   return (
     <Box>
-      <Heading>Case Studies </Heading>
-      <Box pt={"20"} />
+      <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>
+        Case Studies{" "}
+      </Heading>
+      <Box pt={[10, 20, 20]} />
       <CaseStudiesList studies={studies} />
     </Box>
   );

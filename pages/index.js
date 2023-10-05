@@ -6,6 +6,7 @@ import {
   Grid,
   GridItem,
   AspectRatio,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 
@@ -18,11 +19,18 @@ function HomePage() {
     { text: "Contact", link: "/contact" },
   ];
 
+  const [isSmallScreen] = useMediaQuery("(max-width: 1280px)");
+
   return (
     <Box>
-      <Grid templateColumns="repeat(4, 1fr)" gap={0} h="full" py={20}>
+      <Grid
+        templateColumns={["1fr", "1fr", "1fr", "1fr", "1fr 1fr 1fr 1fr"]}
+        gap={0}
+        h="full"
+        py={[2, 10, 20]}
+      >
         <GridItem colSpan={1}>
-          <Heading>
+          <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>
             Hi, I&apos;M <br />
             CHRIS{" "}
           </Heading>
@@ -32,9 +40,9 @@ function HomePage() {
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}
-          mx={100}
+          mx={[0, 30, 20, 100]}
         >
-          <Box pt={107} />
+          <Box pt={[20, 50, 107]} />
           <AspectRatio ratio={1} w={"full"}>
             <Image
               src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60"
@@ -44,17 +52,25 @@ function HomePage() {
         </GridItem>
       </Grid>
 
-      <Grid templateColumns="repeat(4, 1fr)" gap={0} h="full" py={2} pt={40}>
+      <Grid
+        templateColumns={["1fr", "1fr", "1fr", "1fr", "1fr 1fr 1fr 1fr"]}
+        gap={0}
+        h="full"
+        py={[0, 1, 2]}
+        pt={[20, 30, 40]}
+      >
         <GridItem colSpan={2}>
-          <AspectRatio ratio={1}>
-            <Image
-              src="https://images.unsplash.com/photo-1628107628986-60ec506745ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3166&q=80"
-              alt="me"
-            />
-          </AspectRatio>
+          {!isSmallScreen && (
+            <AspectRatio ratio={1} w={"full"}>
+              <Image
+                src="https://images.unsplash.com/photo-1628107628986-60ec506745ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3166&q=80"
+                alt="me"
+              />
+            </AspectRatio>
+          )}
         </GridItem>
-        <GridItem colSpan={2} px={10} height={"full"}>
-          <Heading>WHO?</Heading>
+        <GridItem colSpan={2} px={[0, 5, 10]} height={"full"}>
+          <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>WHO?</Heading>
           <Text variant={"body"} pt={5}>
             {" "}
             I’m Chris Jones. A 19-year-old Computer Science student with a

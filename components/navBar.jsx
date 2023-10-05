@@ -37,9 +37,9 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
   return (
     <Box
       position="fixed"
-      top="10"
+      top={["3", "5", "10"]}
       left={0}
-      px={20}
+      px={[5, 10, 20]}
       zIndex={1002}
       width="full"
       id="navbar"
@@ -61,14 +61,14 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
         <Flex
           justify="space-between"
           alignItems="center"
-          p="5"
+          p={["3", "4", "5"]}
           bg={`background.${colorMode}`}
         >
           <Link
             href="/"
             style={{ cursor: "pointer", width: "40px", height: "100%" }}
           >
-            <AspectRatio ratio={422.28 / 435.38} maxW="40px" w="full">
+            <AspectRatio ratio={422.28 / 435.38} maxW={"40px"} w="full">
               <motion.div
                 variants={logoVariants}
                 initial={isDrawerOpen ? "open" : "closed"}
@@ -78,8 +78,8 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
                 <Image
                   src={logo}
                   alt="Logo"
-                  w="100%"
-                  h="100%"
+                  w={["70%", "90%", "100%"]}
+                  h={["70%", "90%", "100%"]}
                   objectFit="contain"
                 />
               </motion.div>
@@ -89,6 +89,7 @@ const NavBar = ({ isDrawerOpen, toggleDrawer }) => {
           <Text
             onClick={toggleDrawer}
             variant="subheading"
+            fontSize={["1rem", "2rem", "2.5rem"]}
             style={{
               whiteSpace: "pre-line",
               overflow: "hidden",

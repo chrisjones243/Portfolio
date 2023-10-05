@@ -4,7 +4,13 @@ import Link from "next/link";
 
 const CaseStudiesList = ({ studies }) => {
   return (
-    <Box direction={"column"} justify={"center"} align={"center"} mt={10}>
+    <Box
+      direction={"column"}
+      justify={"center"}
+      align={"center"}
+      mt={10}
+      mb={[30, 30, 50, 0]}
+    >
       {studies.map((study) => (
         <Link key={study._id} href={`/caseStudies/${study.slug.current}`}>
           <Box
@@ -28,13 +34,15 @@ const CaseStudiesList = ({ studies }) => {
               backgroundImage={imageObjToUrl(study.image)}
               backgroundSize="cover"
               backgroundPosition="center"
-              opacity="0.85" // Initial opacity
+              opacity={["0.4", "0.4", "0.4", "0.85"]} // Initial opacity
               transition="opacity 0.4s ease-in-out" // Add a smooth transition
               _hover={{
                 opacity: "0.4", // Reduce opacity on hover
               }}
             ></Box>
-            <Heading>{study.title}</Heading>
+            <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>
+              {study.title}
+            </Heading>
           </Box>
         </Link>
       ))}

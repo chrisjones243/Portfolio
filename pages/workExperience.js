@@ -16,9 +16,10 @@ function WorkExperience() {
 
   return (
     <Box>
-      <Heading>Work Experience </Heading>
-      <Box pt={"20"} />
-      {/* {exp && exp.map((e) => <Text key={e._id}>{e.company}</Text>)} */}
+      <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>
+        Work Experience{" "}
+      </Heading>
+      <Box pt={[10, 20, 20]} />
       <WorkExpList experiences={exp} />
     </Box>
   );

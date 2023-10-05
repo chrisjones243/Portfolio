@@ -13,16 +13,16 @@ const CaseStudy = ({ study }) => {
 
   return (
     <Box>
-      <Heading>{title}</Heading>
-      <Box pt={"20"} />
+      <Heading fontSize={["4rem", "4rem", "5rem", "7rem"]}>{title}</Heading>
+      <Box pt={[10, 20, 20]} />
       <Image
         src={imageUrl}
         alt={alt}
-        h={"40vw"}
+        h={["70vw", "60vw", "50vw", "40vw"]}
         w={"full"}
         objectFit={"cover"}
       />
-      <Box pt={"20"} />
+      <Box pt={[10, 20, 20]} />
       <DescriptionText description={description} />
     </Box>
   );

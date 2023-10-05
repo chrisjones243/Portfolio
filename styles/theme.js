@@ -47,6 +47,7 @@ const headingTheme = defineStyleConfig({
     fontWeight: "normal",
     color: "font.secondary",
     _dark: { color: "font.primary" },
+    fontSize: "heading",
   },
   variants: {
     heading: {

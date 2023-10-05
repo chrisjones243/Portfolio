@@ -8,13 +8,21 @@ export const DescriptionText = ({ description }) => {
   return description.map((text, i) => {
     if (text.includes("{/b} ")) {
       return (
-        <Text key={i} variant={"subheading"}>
+        <Text
+          key={i}
+          variant={"subheading"}
+          fontSize={["1.5rem", "1.8rem", "2rem", "2.5rem"]}
+        >
           <br /> {text.replace("{/b} ", "")} <br /> <br />
         </Text>
       );
     }
     return (
-      <Text key={i} variant={"body"}>
+      <Text
+        key={i}
+        variant={"body"}
+        fontSize={["1rem", "1.1rem", "1.2rem", "1.2rem"]}
+      >
         {text} <br /> <br />
       </Text>
     );
@@ -24,7 +32,11 @@ export const DescriptionText = ({ description }) => {
 export const BasedAtText = ({ basedAt }) => {
   return basedAt.map((text, i) => {
     return (
-      <Text key={i} variant={"body"}>
+      <Text
+        key={i}
+        variant={"body"}
+        fontSize={["1rem", "1.1rem", "1.2rem", "1.2rem"]}
+      >
         {text}
       </Text>
     );
@@ -50,7 +62,12 @@ export const ButtonMap = ({ data }) => {
   const { colorMode } = useColorMode(); // Get the current color mode
 
   return (
-    <Flex direction={"column"} justify={"center"} gap={20} pt={10}>
+    <Flex
+      direction={"column"}
+      justify={"center"}
+      gap={[10, 10, 10, 20]}
+      pt={10}
+    >
       {data.map((button) => {
         return (
           <Link href={button.link} key={button._id}>
