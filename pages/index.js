@@ -74,10 +74,10 @@ function HomePage() {
           <Text variant={"body"} pt={5}>
             {" "}
             I’m Chris Jones. A 19-year-old Computer Science student with a
-            passion for <s>money</s> coding and exploring tech's uncharted
+            passion for <s>money</s> coding and exploring tech&rsquo;s uncharted
             territories. Welcome to my corner of the web. Dive into my projects,
             interests, and thoughts below. Feel like saying hi? Drop me an
-            email. Let's conquer this world together!{" "}
+            email. Let&rsquo;s conquer this world together!{" "}
           </Text>
 
           <ButtonMap data={buttons} />
