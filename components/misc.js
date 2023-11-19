@@ -68,9 +68,9 @@ export const ButtonMap = ({ data }) => {
       gap={[10, 10, 10, 20]}
       pt={10}
     >
-      {data.map((button) => {
+      {data.map((button, i) => {
         return (
-          <Link href={button.link} key={button._id}>
+          <Link href={button.link} key={i}>
             <Box
               w={"full"}
               border={`1px solid ${theme.colors.stroke}`} // Use the extracted value inside the callback function
